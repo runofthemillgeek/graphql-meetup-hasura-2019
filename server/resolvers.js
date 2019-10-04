@@ -1,16 +1,26 @@
+const axios = require("axios").default;
+
 const resolvers = {
   Query: {
-    pinnedWeather() {
+    async pinnedWeather() {
+      const response = await axios.get(`http://apis.is/weather/forecasts/en`, {
+        params: {
+          stations: "1"
+        }
+      });
+
+      const { W: info, T: temperature } = response.data.results[0].forecast[0];
+
       return {
         location: {
-          name: 'Reykjavik'
+          name: "Reykjavik"
         },
         forecast: {
-          temperature: 32,
-          unit: 'C',
-          info: 'Clear sky'
+          temperature,
+          unit: "C",
+          info
         }
-      }
+      };
     }
   }
 };

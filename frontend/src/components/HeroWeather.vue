@@ -49,7 +49,26 @@ export default {
   },
   computed: {
     bgImage() {
-      return sunnyImage;
+      const info = this.$apollo.loading
+        ? ""
+        : this.weather.forecast.info.toLowerCase();
+
+      if (["overcast", "light rain", "rain", "rain showers"].includes(info)) {
+        return rainingImage;
+      } else if (
+        [
+          "sleet",
+          "light sleet",
+          "heavy sleet",
+          "snow",
+          "light snow",
+          "heavy snow"
+        ].includes(info)
+      ) {
+        return snowingImage;
+      } else {
+        return sunnyImage;
+      }
     }
   },
   apollo: {
