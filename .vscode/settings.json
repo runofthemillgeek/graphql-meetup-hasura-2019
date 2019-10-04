@@ -1,5 +1,6 @@
 {
   "prettier.disableLanguages": [],
   "vetur.format.defaultFormatter.html": "prettier",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
 }

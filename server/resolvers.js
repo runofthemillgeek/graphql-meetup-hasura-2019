@@ -1,11 +1,15 @@
 const axios = require("axios").default;
 
+const { getStationNumberByName } = require("./lib/stations");
+
 const resolvers = {
   Query: {
-    async pinnedWeather() {
+    async pinnedWeather(_, { location: inputLocation }) {
+      const stationNumber = getStationNumberByName(inputLocation);
+
       const response = await axios.get(`http://apis.is/weather/forecasts/en`, {
         params: {
-          stations: "1"
+          stations: stationNumber
         }
       });
 
@@ -13,7 +17,7 @@ const resolvers = {
 
       return {
         location: {
-          name: "Reykjavik"
+          name: inputLocation
         },
         forecast: {
           temperature,

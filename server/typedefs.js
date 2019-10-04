@@ -1,6 +1,6 @@
 const typeDefs = `
   type Query {
-    pinnedWeather: LocationForecast
+    pinnedWeather(location: String!): LocationForecast
   }
 
   type LocationForecast {
