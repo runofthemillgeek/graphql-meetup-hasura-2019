@@ -1,4 +1,5 @@
 {
-    "prettier.disableLanguages": [],
-    "vetur.format.defaultFormatter.html": "prettier"
+  "prettier.disableLanguages": [],
+  "vetur.format.defaultFormatter.html": "prettier",
+  "editor.formatOnSave": true
 }
