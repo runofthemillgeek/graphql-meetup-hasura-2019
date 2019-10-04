@@ -1,6 +1,15 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <h1>Welcome to Your Vue.js App</h1>
+  <div>
+    <Header />
   </div>
 </template>
+
+<script>
+import Header from "@/components/Header";
+
+export default {
+  components: {
+    Header
+  }
+};
+</script>
