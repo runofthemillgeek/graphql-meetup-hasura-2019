@@ -1,4 +1,5 @@
 # Vue + GraphQL Workshop
+
 📍 GraphQL Meetup, Hasura, BLR 🇮🇳
 
 ## Project Structure
@@ -8,3 +9,11 @@
 `server` contains a vanilla Node.js application using Apollo Server.
 
 ## Running
+
+1. `cd frontend` and run `yarn serve`.
+2. `cd ../server`, add your Google Geocoding API Key to a `.env` file (see `.env.sample` for reference) and run `yarn dev`.
+3. Go to `http://localhost:8080` for Vue app and `http://localhost:4000` for GraphQL Playground.
+
+## Branches & Walkthrough
+
+In the beginning, there was `initial commit`...
