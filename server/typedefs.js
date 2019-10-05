@@ -20,6 +20,12 @@ const typeDefs = `
 
   type Location {
     name: String!
+    coordinates: Coordinates
+  }
+
+  type Coordinates {
+    lat: Float!
+    lng: Float!
   }
 
   type Forecast {

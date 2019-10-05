@@ -1,6 +1,7 @@
 const axios = require("axios").default;
 
 const { getStationNumberByName } = require("./lib/stations");
+const { getCoordinates } = require("./lib/geocoding");
 const { ratingsStore } = require("./data/ratingsStore");
 
 const resolvers = {
@@ -41,6 +42,18 @@ const resolvers = {
       ratingsStore.increment(emoji);
 
       return ratingsStore.getCount(emoji);
+    }
+  },
+
+  Location: {
+    async coordinates(location) {
+      const { name } = location;
+
+      const coords = await getCoordinates(name);
+
+      console.log(coords);
+
+      return coords;
     }
   }
 };

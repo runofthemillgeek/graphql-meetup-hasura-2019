@@ -1,3 +1,9 @@
+const dotenv = require("dotenv");
+
+dotenv.config({
+  example: ".env.sample"
+});
+
 const { GraphQLServer } = require("graphql-yoga");
 
 const typeDefs = require("./typedefs");
@@ -9,5 +15,8 @@ server.start(
   {
     playground: process.env.NODE_ENV === "development" ? "/" : false
   },
-  () => console.log("🚀 Server is running. Open playground on http://localhost:4000")
+  () =>
+    console.log(
+      "🚀 Server is running. Open playground on http://localhost:4000"
+    )
 );
