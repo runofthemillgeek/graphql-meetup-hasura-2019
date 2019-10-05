@@ -1,6 +1,16 @@
 const typeDefs = `
   type Query {
     pinnedWeather(location: String!): LocationForecast
+    ratings: [Rating!]!
+  }
+
+  type Mutation {
+    updateRating(emoji: String!): Int!
+  }
+
+  type Rating {
+    emoji: String!
+    count: Int!
   }
 
   type LocationForecast {

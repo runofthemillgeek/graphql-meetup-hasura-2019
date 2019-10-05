@@ -1,6 +1,7 @@
 const axios = require("axios").default;
 
 const { getStationNumberByName } = require("./lib/stations");
+const { ratingsStore } = require("./data/ratingsStore");
 
 const resolvers = {
   Query: {
@@ -25,6 +26,21 @@ const resolvers = {
           info
         }
       };
+    },
+
+    ratings() {
+      return Object.keys(ratingsStore.ratings).map(emoji => ({
+        emoji,
+        count: ratingsStore.getCount(emoji)
+      }));
+    }
+  },
+
+  Mutation: {
+    updateRating(_, { emoji }) {
+      ratingsStore.increment(emoji);
+
+      return ratingsStore.getCount(emoji);
     }
   }
 };

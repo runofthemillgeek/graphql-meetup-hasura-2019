@@ -5,6 +5,7 @@
     <section>
       <LocationPicker v-model="userLocation" />
       <HeroWeather :location="userLocation" />
+      <Reactions />
     </section>
   </div>
 </template>
@@ -13,12 +14,14 @@
 import Header from "@/components/Header";
 import HeroWeather from "@/components/HeroWeather";
 import LocationPicker from "@/components/LocationPicker";
+import Reactions from "@/components/Reactions";
 
 export default {
   components: {
     Header,
     HeroWeather,
-    LocationPicker
+    LocationPicker,
+    Reactions
   },
 
   data() {
