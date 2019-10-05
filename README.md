@@ -17,3 +17,43 @@
 ## Branches & Walkthrough
 
 In the beginning, there was `initial commit`...
+
+1. `01-scaffold-vue-app`
+
+   We use @vue/cli and `vue create` to scaffold our front-end app.
+
+1. `02-adding-tailwind`
+
+   We add `tailwindcss` to our project to make it tad-easier (opinionated) to build new components.
+
+1. `03-writing-client-queries`
+
+   We start by making our front-end write the non-existing query to fetch weather data. Based on this, we will implement our actual APIs.
+
+1. `04-writing-apollo-server`
+
+   We create a barebones node.js GraphQL server with the help of `graphql-yoga` and turn the previously written client query into reality by implementing the corresponding schemas and resolvers that return dummy data for now.
+
+1. `05-using-query-data-loading-indicator`
+
+   We use the data fetched from the query and with the help of community, add a loading indicator.
+
+1. `06-fetching-real-weather-data`
+
+   We remove the dummy data and use an actual API to fetch the data that we need.
+
+1. `07-passing-custom-location`
+
+   We modify our existing query to accept location name as argument so we can fetch weather data for different locations.
+
+1. `08-mutations`
+
+   We delve into mutations and how easy it is to add one!
+
+1. `09-child-resolvers`
+
+   The power of GraphQL comes from the way we can represent arbitrarily complex graphs and how different children graphs can be resolved separately from the parent. We resolve the coordinates of a location by fetching data from Google API for the child graph of our original weather query graph.
+
+## Credits
+
+- unDraw for the illustrations
